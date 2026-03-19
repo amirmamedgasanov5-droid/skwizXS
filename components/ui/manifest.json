@@ -1,0 +1,21 @@
+{
+  "name": "Skwiz",
+  "short_name": "Skwiz",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "https://i.ibb.co/S48yjqG1/1770383347583.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://i.ibb.co/S48yjqG1/1770383347583.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

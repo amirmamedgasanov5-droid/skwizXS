@@ -1,0 +1,75 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "User Profile",
+      "description": "User profile information",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "handle": { "type": "string" },
+        "email": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "walletBalance": { "type": "number" },
+        "followers": { "type": "array", "items": { "type": "string" } },
+        "following": { "type": "array", "items": { "type": "string" } },
+        "isVerified": { "type": "boolean" },
+        "role": { "type": "string", "enum": ["user", "admin"] }
+      },
+      "required": ["uid", "handle", "email"]
+    },
+    "Post": {
+      "title": "Post",
+      "description": "A post in the feed",
+      "type": "object",
+      "properties": {
+        "authorUid": { "type": "string" },
+        "authorHandle": { "type": "string" },
+        "text": { "type": "string" },
+        "mediaUrl": { "type": "string" },
+        "likesCount": { "type": "number" },
+        "commentsCount": { "type": "number" },
+        "createdAt": { "type": "number" }
+      }
+    },
+    "Chat": {
+      "title": "Chat",
+      "description": "A direct message chat",
+      "type": "object",
+      "properties": {
+        "participants": { "type": "array", "items": { "type": "string" } },
+        "lastMessage": { "type": "string" },
+        "lastMessageTime": { "type": "number" }
+      }
+    },
+    "Notification": {
+      "title": "Notification",
+      "description": "A user notification",
+      "type": "object",
+      "properties": {
+        "recipientUid": { "type": "string" },
+        "senderUid": { "type": "string" },
+        "type": { "type": "string" },
+        "isRead": { "type": "boolean" },
+        "createdAt": { "type": "number" }
+      }
+    }
+  },
+  "firestore": {
+    "/users/{uid}": {
+      "schema": "UserProfile",
+      "description": "User profiles"
+    },
+    "/posts/{postId}": {
+      "schema": "Post",
+      "description": "Feed posts"
+    },
+    "/chats/{chatId}": {
+      "schema": "Chat",
+      "description": "Direct message chats"
+    },
+    "/notifications/{notifId}": {
+      "schema": "Notification",
+      "description": "User notifications"
+    }
+  }
+}

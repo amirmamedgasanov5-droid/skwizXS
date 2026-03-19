@@ -1,0 +1,8 @@
+{
+  "name": "SQUWIZ",
+  "description": "High-End Minimalist Social Network with SK Coin Wallet, Card Withdrawals, and Gift Exchange.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
